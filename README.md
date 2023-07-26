@@ -684,7 +684,7 @@
    **[⬆ Back to Top](#table-of-contents)**
 
    ### UZB array slice metodining ishlatilish maqsadi
-   **slice()** metodi tanlangan indexdagi elementdan boshlab arrayni oxirigacha yangi array obyekti sifatida qaytaradi. Unga bitta yoki ikkta argument berishimiz mumkin, agar bitta argument berilganda aynan shu indexdagi elementdan boshlab arrayning qolgan qismini oxirigacha qaytaradi, agar ikkta argument berilsa boshlang'ich argumentni ham qo'shib qaytaradi, ammo ikkinchi argumentgacha bo'lgan barcha elementlarni qaytaradi, ikkinchi argument qiymatini olmaydi.
+   **slice()** metodi tanlangan indexdagi elementdan boshlab arrayni oxirigacha yangi array obyekti sifatida qaytaradi. Unga bitta yoki ikkta argument berishimiz mumkin, agar bitta argument berilganda aynan shu indexdagi elementdan boshlab arrayning qolgan qismini oxirigacha qaytaradi, agar ikkta argument berilsa boshlang'ich argumentni ham qo'shib ikkinchi argumentgacha bo'lgan barcha elementlarni qaytaradi, ikkinchi argument qiymatini olmaydi.
 
    ```javascript
    let arrayIntegers = [1, 2, 3, 4, 5];
