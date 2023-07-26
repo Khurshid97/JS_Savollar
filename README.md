@@ -683,6 +683,17 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
+   ### UZB array slice metodining ishlatilish maqsadi
+   **slice()** metodi tanlangan indexdagi elementdan boshlab arrayni oxirigacha yangi array obyekti sifatida qaytaradi. Unga bitta yoki ikkta argument berishimiz mumkin, agar bitta argument berilganda aynan shu indexdagi elementdan boshlab arrayning qolgan qismini oxirigacha qaytaradi, agar ikkta argument berilsa boshlang'ich argumentni ham qo'shib qaytaradi, ammo ikkinchi argumentgacha bo'lgan barcha elementlarni qaytaradi, ikkinchi argument qiymatini olmaydi.
+
+   ```javascript
+   let arrayIntegers = [1, 2, 3, 4, 5];
+   let arrayIntegers1 = arrayIntegers.slice(0, 2); // returns [1,2]
+   let arrayIntegers2 = arrayIntegers.slice(2, 3); // returns [3]
+   let arrayIntegers3 = arrayIntegers.slice(3); //returns [4, 5]
+   ```
+  **Qayd:** Ushbu metod original arrayni mutatsiya (o'zgartirish) qilmaydi, shunchaki uning tarkibiy o'rinbosarini yaratadi
+
 6. ### What is the purpose of the array splice method
 
    The **splice()** method is used either adds/removes items to/from an array, and then returns the removed item. The first argument specifies the array position for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted. Each additional argument is added to the array.
