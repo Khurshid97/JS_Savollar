@@ -764,6 +764,16 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
+   ### UZB: Obyekt va Map ni solishtiring?
+   **Objects**lar **Map**ga o'xshash bo'ladi, va ikkalasi ham bizga key and value orqali ishlashimizga imkon beradi, shuningdek ushbu qiymatlarni olish, o'chirib yuborish, va keylarimizda saqlangan ma'lumotni aniqlash imkonini beradi. Shu sababli Obyektlar map sifatida ishlatilib kelingan. Biroq quyida bir necha turli farqlarni ko'rib chiqamiz.
+
+   1. Objectga key sifatida faqat string va symboldan foydalanish mumkin, map uchun esa istalgan narsa, ya'ni primitiv data typelarimiz, funksiya va objectlar.
+   2. Objectda kalit so'zlar tartiblangan bo'lmaydi, mapda esa tartiblangan bo'ladi. Ya'ni biz loop orqali kirganimizda obyektda har doim bitta indexda doimiy bir xil qiymat turmaydi.
+   3. Biz Map o'lchamini qiyinchiliksiz topa olamiz(size propertiysi orqali), ammo Objectda bu narsa o'zimiz tomonimizdan qilinshi kerak. 
+   4. Mapga biz loop orqali kira olamiz, ammo Objectda biz loopga faqat key orqali kirishimiz mumkin bo'ladi.
+   5. Objectda o'zining prototipi mavjud, ya'ni defolt holatida prototipdagi keylar bilan muammo chiqishi mumkin. Shu sababli ES5 versiyada Object.create(null) sifatida obyekt yaratish belgilangan, ammo u kamdan kam ishlatiladi.
+   6. Shuningdek Map orqali biz qiymat qo'shish yoki olib tashlashimiz oson kechadi.
+
 9. ### What is the difference between == and === operators
 
    JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables. The strict operators follow the below conditions for different types,
