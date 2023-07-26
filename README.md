@@ -683,7 +683,7 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-   ### UZB array slice metodining ishlatilish maqsadi
+   ### UZB: array slice metodining ishlatilish maqsadi
    **slice()** metodi tanlangan indexdagi elementdan boshlab arrayni oxirigacha yangi array obyekti sifatida qaytaradi. Unga bitta yoki ikkta argument berishimiz mumkin, agar bitta argument berilganda aynan shu indexdagi elementdan boshlab arrayning qolgan qismini oxirigacha qaytaradi, agar ikkta argument berilsa boshlang'ich argumentni ham qo'shib ikkinchi argumentgacha bo'lgan barcha elementlarni qaytaradi, ikkinchi argument qiymatini olmaydi.
 
    ```javascript
@@ -714,9 +714,9 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
-   ### UZB Array splice metodining ishlatilish maqsadi
+   ### UZB: Array splice metodining ishlatilish maqsadi
 
-   **splice()** metodi orqali biz original arrayga qiymat qo'shishimiz va olib tashlashimiz mumkin, ma bu metod aynan olib tashlangan qiymatni qaytaradi. Birinchi argument sifatida olib tashlanishi kerak bo'lgan qiymat indexi kirgaziladi, ikkinchi qiymat esa ixtiyoriy bo'lib nechta element olib tashlanishi kerakligini bildiradi. Uchunchi va qolgan argumentlar arrayga qo'shilishi kerak bo'lgan qiymatlardir.
+   **splice()** metodi orqali biz original arrayga qiymat qo'shishimiz va olib tashlashimiz mumkin, va bu metod aynan olib tashlangan qiymatni qaytaradi. Birinchi argument sifatida olib tashlanishi kerak bo'lgan qiymat indexi kirgaziladi, ikkinchi qiymat esa ixtiyoriy bo'lib nechta element olib tashlanishi kerakligini bildiradi. Uchunchi va qolgan argumentlar arrayga qo'shilishi kerak bo'lgan qiymatlardir.
 
     ```javascript
    let arrayIntegersOriginal1 = [1, 2, 3, 4, 5];
@@ -727,7 +727,7 @@
    let arrayIntegers2 = arrayIntegersOriginal2.splice(3); // returns [4, 5]; original array: [1, 2, 3]
    let arrayIntegers3 = arrayIntegersOriginal3.splice(3, 1, "a", "b", "c"); //returns [4]; original array: [1, 2, 3, "a", "b", "c", 5]
    ```
-   **Qayd:** Ushbu metod original arrayni mutatsiya (o'zgartiradi) qiladi, va olib tashlanayotgan elemntlarni array sifatida qaytaradi
+   **Qayd:** Ushbu metod original arrayni mutatsiya (o'zgartiradi) qiladi, va olib tashlanayotgan elementlarni array sifatida qaytaradi
 
 7. ### What is the difference between slice and splice
 
@@ -740,6 +740,16 @@
    | Used to pick the elements from array         | Used to insert or delete elements to/from array |
 
    **[⬆ Back to Top](#table-of-contents)**
+
+   ### UZB: Slice va Splice o'rtasidagi farqlar
+
+   Table ko'rinishada bir necha farqlar
+
+   | Slice                                           | Splice                                          |
+   | --------------------------------------------    | ----------------------------------------------- |
+   | Original arrayni o'zgartirmaydi(immutable)      | Original arrayni o'zgartiradi(mutable)            |
+   | Arrayning bo'lagini yoki kopiyasini qaytaradi   | Olib tashlanishi kerak bo'lgan qiymatlarni qaytaradi |
+   | Arrayning ichidan tanlab olish uchun ishlatiladi| Arrayga element qo'shish va olib tashlash uchun kerak |
 
 8. ### How do you compare Object and Map
 
