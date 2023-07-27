@@ -805,6 +805,35 @@
 
    **[⬆ Back to Top](#table-of-contents)**
 
+   ### UZB: == va === operatorlar orasidagi farq?
+   JavaScriptda ikki xildagi solishtirish operatorlari mavjud bo'lib, ular strict(qattiq)[===, !==] va type-converting(type o'zgartiruvchi) [==, !=] hisoblanadi. Strict operatori type o'zgartirmasdan ishlaydi, ya'ni u ikkala solishtirilayotgan qiymat bir xil bo'lishini talab qiladi aks holda false qaytaradi, ammo == operatori qiymatning typiga qarab type conversion qiladi. 
+   Strict operatori quyidagi qoidalarga asosan ishlaydi.
+
+   1. Agar 2 ta string bir xil uzunlikdagi qiymatga ega bo'lsa, bir xil elemnentga va elementlarning joyi ketmaketligi bir xil bo'lsa true qaytaradi.
+   2. Agar 2 ta raqam o'zaro teng bo'lsa va number type da bo'lsa true qaytaradi.
+      Ikkita qoidadan tashqari holatlar mavjud
+      1. NaN hech nimaga teng bo'lmaydi, hattoki NaN o'ziga ham
+      2. Musbat va manfiy 0 llar bir biriga teng
+   3. Agar ikkita bolean operatorlari bir xil bo'lsa true qaytaradi.
+   4. Agar ikkta objectlar xotirada bir xil joyda turgan bo'lsa o'zaro teng hisoblanadi va true qaytaradi.
+   5. Null va undefined === da teng emas, ammo == da teng,
+    null===undefined --> false,
+    null==undefined --> true
+  
+  Quyida yuqoridagilarga namunani ko'rishingiz mumkin
+   ```javascript
+   0 == false   // true
+   0 === false  // false
+   1 == "1"     // true
+   1 === "1"    // false
+   null == undefined // true
+   null === undefined // false
+   '0' == false // true
+   '0' === false // false
+   []==[] or []===[] //false, xotirada turli xildagi joylarda turadi
+   {}=={} or {}==={} //false, xotirada turli xildagi joylarda turadi
+   ```
+
 10. ### What are lambda or arrow functions
 
     An arrow function is a shorter syntax for a function expression and does not have its own **this, arguments, super, or new.target**. These functions are best suited for non-method functions, and they cannot be used as constructors.
