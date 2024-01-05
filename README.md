@@ -578,6 +578,89 @@
 
       **[⬆ Back to Top](#table-of-contents)**
 
+      ### UZB: JavaScriptda obyektlarni yaratish usullari
+
+      Obyektlarni yaratish usullariga quyidagilar kiradi
+
+      1. **Obyekt constructor:**
+
+          Obyekt yaratishning eng oddiy usuli. Hozzirda tavsiya etilmaydi.
+
+          ```javascript
+          var object = new Object();
+      ```
+
+      2. **Obyekt create metodi:**
+
+        Obyektning create metodi orqali obyektning prototipidan parameter sifatida foydalangan holda.
+
+        ```javascript
+        var object = Object.create(null);
+        ```
+
+      3. **Obyekt sintaksisi orqali:**
+
+          Obyektni jingalak qavslarni ochgan holda uning key and value qiymatlarini kirgazib, vergul bilan ajratilgan holda.
+
+          ```javascript
+          var obyekt = {
+              name: "Xurshid",
+              age: 25
+          };
+
+          Obyektning value qiymati sifatida biz har qanday turdagi data typelardan foydalanishimiz mumkin, array, funksiyalar va ichma ich obyektlardan ham. Key sifatida esa faqat symbol va stringdan foydalanamiz
+          ```
+
+          **Qayd:** Obyekt yaratishning eng oson usuli
+
+      4. **Funksiya konstruktori:**
+
+          Har qanday funksiya yaratib uni new operatori orqali obyektga o'zgartirish
+
+          ```javascript
+          function Person(name, age = 35) {
+            this.name = name;
+            this.age = age;
+          }
+          var object = new Person("Xurshid", 25);
+          ```
+
+      5. **Prototip bilan Funksiya konstruktori:**
+
+          Bu funksiya konstruktori bilan bir xil bo'lib, ammo o'zining prototipini property va metodlari uchun ishlatadi.
+
+          ```javascript
+          // funksiya yaratiladi
+          function Person() {}
+
+          // funksiya prototipi orqali name kalit so'ziga Xurshid qiymati biriktirildi
+          Person.prototype.name = "Xurshid";
+
+          // yangi obyekt yaratiladi
+          var object = new Person();
+          ```
+
+          Funksiya yaratiladi, so'ngra prototipi orqali argument beriladi, funksiya nomini olgan holda obyektni new metodi orqali obyektga aylantiriladi.
+
+          ```javascript
+          function func() {};
+
+          new func(x, y, z);
+          ```
+
+          **(Yoki)**
+
+          ```javascript
+          // Yangi obyekt namunasini funksiya prototipi orqali obyekt create metodi orqali yaratish
+          var newInstance = Object.create(func.prototype)
+
+          // funksiyani call metodi orqali chaqirish
+          var result = func.call(newInstance, x, y, z),
+
+          // Agar natija null bo'lmasa biz uni ishlatamiz, aks holda yangi instance yaratiladi.
+          console.log(result && typeof result === 'object' ? result : newInstance);
+          ```
+
 2. ### What is a prototype chain
 
    **Prototype chaining** is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
@@ -840,6 +923,10 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+    ### UZB: lyambda yoki arrow funksiya nima?
+
+    Arrow funksiya bu function expressionning qisqartirilgan versiyasi bo'lib, unda **this, arguments, super, or new.target** shular bo'lmaydi. Bu funksiyalar metodsiz funksiyalar uchun juda qulay hisoblanadi, va ular konstruktor sifatida ishlatilamydi.
+
 11. ### What is a first class function
 
     In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
@@ -853,7 +940,20 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-12. ### What is a first order function
+
+    ### UZB: First class funksiyalar nima?
+
+    JavaScriptda barcha funksiyalar first class object hissoblanadi. First-class funksiyalar xuddi boshqa variabllar  singari ishlatiladi.
+
+    Misol uchun, funksiya argument sifatida boshqa funksiyada qabul qilinishi mumkin, va qaytarilishi mumkin, shuningdek qiymat sifatida variablega biriktirilishi mumkin.
+    Quiyda bir funksiya argument sifatida boshqa funksiyada ishlatilgan.
+
+    ```javascript
+    const handler = () => console.log("This is a click handler function");
+    document.addEventListener("click", handler);
+    ```
+    
+    12. ### What is a first order function
 
     First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
 
@@ -862,6 +962,14 @@
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
+
+    ### UZB: First-order funksiyalar nima
+
+    First-order funksiya bu har qanday funksiya bo'lib boshqa funksiyani argument sifatida qabul qilmaydi, va return value sifatida qaytarmaydi.
+
+    ```javascript
+    const firstOrder = () => console.log("I am a first order function!");
+    ```
 
 13. ### What is a higher order function
 
@@ -876,6 +984,17 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
+    ### UZB: Higher-order funksiyalar nima?
+
+    Higher-order funksiya bu har qanday funksiya bo'lib u o'ziga boshqa funksiyani argument sifatida qabul qiladi, va boshqa funksiyani return value sifatida qaytaradi.
+
+    ```javascript
+    const firstOrderFunc = () =>
+      console.log("Salom, men first order funksiyaman");
+    const higherOrder = (ReturnFirstOrderFunc) => ReturnFirstOrderFunc();
+    higherOrder(firstOrderFunc);
+    ```
+
 14. ### What is a unary function
 
     Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for a single argument accepted by a function.
@@ -887,6 +1006,15 @@
     ```
 
     **[⬆ Back to Top](#table-of-contents)**
+
+    ### UZB: Unary function nima?
+
+    Unary function bu (monadic ham deyiladi) har qanday funksiya bo'lib u faqat bitta argument qabul qiladi, shu sababli ham u faqat bitta argument bilan ishlaydi. Bu har qanday turdagi funksiya bo'lishi mumkin.
+    Misol uchun
+
+    ```javascript
+    const unaryFunction = (a) => console.log(a + 10); // 10 raqamini berilgan argumentga qo'shib ko'rsatadi
+    ```
 
 15. ### What is the currying function
 
@@ -907,6 +1035,10 @@
     Curried functions are great to improve **code reusability** and **functional composition**.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+    ### UZB: currying function nima ?
+
+    
 
 16. ### What is a pure function
 
